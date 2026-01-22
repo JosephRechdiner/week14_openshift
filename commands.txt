@@ -1,4 +1,5 @@
 docker:
+docker login
 docker build -t josephrechdiner/weapons-app:v1 ./app
 docker push josephrechdiner/weapons-app:v1
 
