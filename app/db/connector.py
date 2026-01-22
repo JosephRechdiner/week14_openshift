@@ -30,10 +30,11 @@ class SQLManager:
             with open ("init.sql", "r") as file:
                 statements = file.read().split(";")
 
-            for statement in statements:
-                statement = statement.strip()
-                if statement:
-                    cursor.execute(statement)
+            with cnx.cursor() as cursor:
+                for statement in statements:
+                    statement = statement.strip()
+                    if statement:
+                        cursor.execute(statement)
             cnx.commit()
 
         except Exception as e:
