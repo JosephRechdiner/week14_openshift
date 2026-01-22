@@ -10,5 +10,5 @@ class DataAnalizer:
     
     @staticmethod
     def remove_null(df: DataFrame):
-        df = df.fillna("Unknown")
+        df["manufacturer"] = df["manufacturer"].fillna("Unknown")
         return df
