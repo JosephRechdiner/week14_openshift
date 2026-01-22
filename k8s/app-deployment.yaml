@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-deployment
-        image: josephrechdiner/weapons-app:v1
+        image: josephrechdiner/weapons-app:v17
         ports:
         - containerPort: 8000
         env:
