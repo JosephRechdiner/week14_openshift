@@ -5,7 +5,7 @@ from pandas import DataFrame
 class DataAnalizer:
     @staticmethod
     def claculate_risk_level(df: DataFrame):
-        df["risk_level"] = pd.cut(df["range_km"], bins=[1, 20, 100, 300, np.inf], labels=["low", "medium", "high", "extreme"])
+        df["risk_level"] = pd.cut(df["range_km"], bins=[0, 20, 100, 300, np.inf], labels=['low', 'medium', 'high', 'extreme'])
         return df
     
     @staticmethod

@@ -1,11 +1,11 @@
 docker:
 docker login
-docker build -t josephrechdiner/weapons-app:v1 ./app
-docker push josephrechdiner/weapons-app:v1
+docker build -t josephrechdiner/weapons-app:v17 ./app
+docker push josephrechdiner/weapons-app:v17
 
 oc:
 oc login --token=sha256~xAiyK6HDKKmD_2_Zh1KEX2S7DaFNDtyGVQr7IHvDWOc --server=https://api.rm2.thpm.p1.openshiftapps.com:6443
 oc apply -f ./k8s
 oc get pods -w
-oc expose svc ________
+oc expose svc app-service
 oc get routes

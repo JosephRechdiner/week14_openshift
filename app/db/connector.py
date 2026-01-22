@@ -5,7 +5,7 @@ config = {
     "host": os.getenv("MYSQL_HOST"),
     "user": os.getenv("MYSQL_USER"),
     "password": os.getenv("MYSQL_PASSWORD"),
-    "database": os.getenv("MYSQL_DATABASE"),
+    "database": os.getenv("MYSQL_DATABASE")
 }
 
 class SQLManager:
@@ -27,7 +27,7 @@ class SQLManager:
         cursor = cnx.cursor()
 
         try:
-            with open ("init.sql", "r") as file:
+            with open ("./init.sql", "r") as file:
                 statements = file.read().split(";")
 
             with cnx.cursor() as cursor:
