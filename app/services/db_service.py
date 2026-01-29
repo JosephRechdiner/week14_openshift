@@ -7,6 +7,7 @@ class SQLService:
                 INSERT INTO weapons_table (weapon_id, weapon_name, weapon_type, range_km, weight_kg, manufacturer, origin_country, storage_location, year_estimated, risk_level)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
                 """
+        inserted_count = 0
         try:
             with cnx.cursor() as cursor:
                 for weapon in data:
@@ -21,8 +22,8 @@ class SQLService:
                                             weapon.year_estimated,
                                             weapon.risk_level,
                                             ))
+                    inserted_count += 1
                 cnx.commit()
-                inserted_count = cursor.rowcount
-                return inserted_count
+            return inserted_count
         except Exception as e:
             raise Exception(f"could not insert data into db {str(e)}")

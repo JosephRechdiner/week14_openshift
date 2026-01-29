@@ -17,15 +17,13 @@ spec:
       - name: mysql
         image: mysql:8.0
         ports:
-        - containerPort: 3307       
+        - containerPort: 3306       
         volumeMounts:
         - name: data
           mountPath: /var/lib/mysql
           subPath: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "password"
-        - name: MYSQL_PASSWORD
           value: "password"
         - name: MYSQL_DATABASE
           value: "weapons_db"

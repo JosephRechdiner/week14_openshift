@@ -1,7 +1,7 @@
 docker:
 docker login
-docker build -t josephrechdiner/weapons-app:v17 ./app
-docker push josephrechdiner/weapons-app:v17
+docker build -t josephrechdiner/weapons-app:v19 ./app
+docker push josephrechdiner/weapons-app:v19
 
 oc:
 oc login --token=sha256~xAiyK6HDKKmD_2_Zh1KEX2S7DaFNDtyGVQr7IHvDWOc --server=https://api.rm2.thpm.p1.openshiftapps.com:6443
